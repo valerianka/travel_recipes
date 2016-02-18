@@ -6,7 +6,6 @@
 
 autopublish
 insecure
-iron:router
 twbs:bootstrap
 mrt:jquery-ui
 accounts-ui
@@ -31,3 +30,5 @@ gadicohen:reactive-window
 fourseven:scss
 kadira:flow-router
 kadira:react-layout
+react
+react-meteor-data
