@@ -6,8 +6,3 @@ FlowRouter.route('/', {
   }
 });
 
-MainPage=React.createClass({
-  render() {
-    return null;
-  }
-})
