@@ -1,5 +1,5 @@
-Template.layout.events({
-  'click #hamburger'() {
-    console.log("clicked!");
-  }
-});
+// Template.layout.events({
+//   'click #hamburger'() {
+//     console.log("clicked!");
+//   }
+// });
