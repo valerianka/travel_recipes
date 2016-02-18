@@ -1,4 +1,6 @@
 Layout = React.createClass({
+  
+
   render() {
         /*{{#if rwindow.innerWidth 'lte' 700}}
       <div id="hamburger"></div>
@@ -13,7 +15,7 @@ Layout = React.createClass({
     return (<div className="layout">
       <header>
         <a href="/"><span className="site-name">Travel Recipes</span></a>
-
+        <NewRecipeButton />
         <LoginButtons />
       </header>
 
@@ -36,6 +38,28 @@ LoginButtons = React.createClass({
 
   render(){
     return <span ref="container" />;
+  }
+
+});
+
+NewRecipeButton = React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData(){
+    return {
+      loggedIn: Meteor.userId()
+    }
+  },
+
+  render(){
+    if (!this.data.loggedIn) {
+      return null;
+    } else {
+      return (<a className="button headerButton" href="/recipes/add" role="button">
+           New recipe
+        </a>);
+    }
+
   }
 
 });
