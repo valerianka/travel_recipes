@@ -29,8 +29,9 @@ MainPage=React.createClass({
 Recipe=React.createClass({
   render(){
     console.log(this.props.recipe);
+    var string = `/recipes/${this.props.recipe._id}`;
     return <div>
-  <a href="/recipes/{this.props.recipe._id}">
+  <a href={string}>
     <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
       <p className="name">{this.props.recipe.name} </p>
       <p>{this.props.recipe.duration}</p>
