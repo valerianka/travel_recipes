@@ -24,6 +24,35 @@ $not-curly-font: 'Tenor Sans', sans-serif;
 ******************************/
 $thumbnail-border-width: 0.05rem;
 
+
+/******************************
+	Mixins
+******************************/
+@mixin flexbox($justify-content, $align-items){
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	justify-content: $justify-content;
+	-webkit-justify-content: $justify-content;
+
+	-webkit-align-items: $align-items;
+	align-items: $align-items;
+}
+
+@mixin horizontal-borders(){
+	border-left: $thumbnail-border-width solid white;
+	border-right: $thumbnail-border-width solid white;
+}
+
+@mixin vertical-borders(){
+	border-top: $thumbnail-border-width solid white;
+	border-bottom: $thumbnail-border-width solid white;
+}
+
+
 /******************************
 	General
 ******************************/
@@ -79,17 +108,7 @@ header {
 	height: 65px;
 	padding: 0 20px;
 
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	justify-content: space-between;
-	-webkit-justify-content: space-between;
-
-	-webkit-align-items: center;
-	align-items: center;
+	@include flexbox(space-between, center);
 }
 
 .site-name {
@@ -138,16 +157,7 @@ header {
 	font-size: 72px;
 	font-family: $very-curly-font;
 	text-align: center;
-
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	-webkit-align-items: center;
-	align-items: center;
-
+	@include flexbox(center, center);
 	margin-top: 70px;
 	padding: 20px;
 	height: 300px;
@@ -169,7 +179,7 @@ header {
 ******************************/
 
 .recipe-list {
-	border-top: $thumbnail-border-width solid white;
+	@include vertical-borders()
 }
 
 .thumb-wrapper {
@@ -180,8 +190,7 @@ header {
 	/* size for mobile */
 	width: 100%;
 
-	border-top: $thumbnail-border-width solid white;
-	border-bottom: $thumbnail-border-width solid white;
+	@include vertical-borders()
 
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -212,18 +221,14 @@ header {
 }
 
 @media screen and (min-width: 501px) {
+	// only have horizontal borders if there is more than one column
+	.recipe-list,
 	.thumb-wrapper {
-		width: 50%;
-
-		// only have side borders if there is more than one column
-		border-left: $thumbnail-border-width solid white;
-		border-right: $thumbnail-border-width solid white;
+		@include horizontal-borders;
 	}
 
-	.recipe-list {
-		// only have side borders if there is more than one column
-		border-left: $thumbnail-border-width solid white;
-		border-right: $thumbnail-border-width solid white;
+	.thumb-wrapper {
+		width: 50%;
 	}
 }
 
