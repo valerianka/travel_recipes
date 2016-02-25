@@ -33,9 +33,10 @@ MainPage=React.createClass({
 
 Recipe=React.createClass({
   render(){
+    const recipeLink = `/recipes/${this.props.recipe._id}`;
     return (
       <div>
-        <a href={string}>
+        <a href={recipeLink}>
           <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
             <p className="name">{this.props.recipe.name} </p>
             <p>{this.props.recipe.duration}</p>
