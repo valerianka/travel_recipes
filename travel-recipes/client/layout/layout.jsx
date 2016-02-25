@@ -1,15 +1,10 @@
 Layout=React.createClass({
   render() {
-        /*{{#if rwindow.innerWidth 'lte' 700}}
+    /*
+    {{#if rwindow.innerWidth 'lte' 700}}
       <div id="hamburger"></div>
-    {{else}}
-      {{#if currentUser}}
-        <a class="button headerButton" href="/recipes/add" role="button">
-           New recipe
-        </a>
-      {{/if}}
-
-    {{/if}}*/
+    {{/if}}
+    */
     return (
       <div className="layout">
         <header>
