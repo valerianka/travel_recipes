@@ -23,14 +23,47 @@ Nagivation=React.createClass({
     };
   },
 
+
+  getInitialState(){
+    return {
+      menuVisible: false
+    };
+  },
+
+
+  toggleMenu(){
+    this.setState({menuVisible: !this.state.menuVisible});
+  },
+
+
   render(){
     if (this.data.windowWidth <= 700){
       return (
-        <div id="hamburger"></div>
+        <div>
+          <div id="hamburger" onClick={this.toggleMenu}></div>
+          <HamburgerMenu menuVisible={this.state.menuVisible}/>
+        </div>
       );
     } else {
       return (
         <div>
+          <NewRecipeButton />
+          <LoginButtons />
+        </div>
+      );
+    }
+  }
+});
+
+
+
+HamburgerMenu=React.createClass({
+  render(){
+    if (!this.props.menuVisible){
+      return null;
+    } else {
+      return (
+        <div className="hamburger-menu">
           <NewRecipeButton />
           <LoginButtons />
         </div>
