@@ -1,21 +1,41 @@
 Layout=React.createClass({
   render() {
-    /*
-    {{#if rwindow.innerWidth 'lte' 700}}
-      <div id="hamburger"></div>
-    {{/if}}
-    */
     return (
       <div className="layout">
         <header>
           <a href="/"><span className="site-name">Travel Recipes</span></a>
-          <NewRecipeButton />
-          <LoginButtons />
+          <Nagivation />
         </header>
 
         { this.props.content }
       </div>
     );
+  }
+});
+
+
+Nagivation=React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData(){
+    return {
+      windowWidth: rwindow.innerWidth()
+    };
+  },
+
+  render(){
+    if (this.data.windowWidth <= 700){
+      return (
+        <div id="hamburger"></div>
+      );
+    } else {
+      return (
+        <div>
+          <NewRecipeButton />
+          <LoginButtons />
+        </div>
+      );
+    }
   }
 });
 
