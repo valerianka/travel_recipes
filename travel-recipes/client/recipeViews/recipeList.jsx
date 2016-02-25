@@ -33,8 +33,6 @@ MainPage=React.createClass({
 
 Recipe=React.createClass({
   render(){
-    console.log(this.props.recipe);
-    var string = `/recipes/${this.props.recipe._id}`;
     return (
       <div>
         <a href={string}>
