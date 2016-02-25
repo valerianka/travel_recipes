@@ -22,7 +22,9 @@ MainPage=React.createClass({
           bannerText="Discover the world's most delicious vacations"
         />
 
-        {this.renderRecipes()}
+        <div className="recipe-list">
+          {this.renderRecipes()}
+        </div>
       </div>
     );
   }

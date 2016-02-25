@@ -20,6 +20,11 @@ $not-curly-font: 'Tenor Sans', sans-serif;
 
 
 /******************************
+	Sizes
+******************************/
+$thumbnail-border-width: .5px;
+
+/******************************
 	General
 ******************************/
 
@@ -166,6 +171,11 @@ header {
 	Recipe list
 ******************************/
 
+.recipe-list {
+	border-top: $thumbnail-border-width solid white;
+	border-bottom: $thumbnail-border-width solid white;
+}
+
 .thumb {
 	/* width for mobile */
 	width: 100%;
@@ -173,7 +183,8 @@ header {
 	height: 300px;
 	display: inline-block;
 	margin: 0;
-	border: 1px solid white;
+	border-top: $thumbnail-border-width solid white;
+	border-bottom: $thumbnail-border-width solid white;
 	padding: 15px;
 	padding-bottom: 5px;
 	background-size: cover;
@@ -200,6 +211,16 @@ header {
 @media screen and (min-width: 500px) {
 	.thumb {
 		width: 50%;
+
+		// only have side borders if there is more than one column
+		border-left: $thumbnail-border-width solid white;
+		border-right: $thumbnail-border-width solid white;
+	}
+
+	.recipe-list {
+		// only have side borders if there is more than one column
+		border-left: $thumbnail-border-width solid white;
+		border-right: $thumbnail-border-width solid white;
 	}
 }
 
