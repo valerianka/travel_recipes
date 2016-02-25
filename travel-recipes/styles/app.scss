@@ -22,7 +22,7 @@ $not-curly-font: 'Tenor Sans', sans-serif;
 /******************************
 	Sizes
 ******************************/
-$thumbnail-border-width: 0.15rem;
+$thumbnail-border-width: 0.05rem;
 
 /******************************
 	General
@@ -169,29 +169,24 @@ header {
 ******************************/
 
 .recipe-list {
-	border-top: ($thumbnail-border-width * 2) solid white;
+	border-top: $thumbnail-border-width solid white;
 }
 
 .thumb-wrapper {
 	margin: 0;
 	display: inline-block;
-	position: relative;
+	// position: relative;
 
 	/* size for mobile */
 	width: 100%;
-	padding-bottom: 100%;
-}
 
-.thumb {
-	position: absolute;
-	top: 0; bottom: 0; left: 0; right: 0;
-	margin: 0;
-	height: 100%;
 	padding: 15px;
 	padding-bottom: 5px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 1;
+	border-top: $thumbnail-border-width solid white;
+	border-bottom: $thumbnail-border-width solid white;
 
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -199,12 +194,12 @@ header {
 	transition: all .2s ease;
 }
 
-.thumb p {
+.thumb-wrapper p {
 	color: white;
 	margin: 0;
 }
 
-.thumb p.name {
+.thumb-wrapper p.name {
 	font-family: $slightly-curly-font;
 	font-weight: 400;
 	font-size: 20px;
@@ -213,7 +208,7 @@ header {
 @media screen and (min-width: 500px) {
 	.thumb-wrapper {
 		width: 50%;
-		padding-bottom: 50%;
+		// padding-bottom: 50%;
 
 		// only have side borders if there is more than one column
 		border-left: $thumbnail-border-width solid white;
@@ -230,21 +225,21 @@ header {
 @media screen and (min-width: 1000px) {
 	.thumb-wrapper {
 		width: 33.33%;
-		padding-bottom: 33.3%;
+		// padding-bottom: 33.3%;
 	}
 }
 
 @media screen and (min-width: 1500px) {
 	.thumb-wrapper {
 		width: 25%;
-		padding-bottom: 25%;
+		// padding-bottom: 25%;
 	}
 }
 
 @media screen and (min-width: 2000px) {
 	.thumb-wrapper {
 		width: 20%;
-		padding-bottom: 20%;
+		// padding-bottom: 20%;
 	}
 }
 
