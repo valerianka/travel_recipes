@@ -9,7 +9,7 @@ MainPage=React.createClass({
 
   renderRecipes(){
     return this.data.recipes.map((recipe) => {
-      return <Recipe key={recipe._id} recipe={recipe} />;
+      return <RecipeThumbnail key={recipe._id} recipe={recipe} />;
     })
 
   },
@@ -32,7 +32,7 @@ MainPage=React.createClass({
 
 
 
-Recipe=React.createClass({
+RecipeThumbnail=React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
