@@ -72,7 +72,7 @@ NewRecipeButton=React.createClass({
       return null;
     } else {
       return (
-        <a className="button headerButton" href="/recipes/add" role="button">
+        <a className="button headerButton" href="/recipes/add">
            New recipe
         </a>
       );

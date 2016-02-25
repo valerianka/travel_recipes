@@ -6,7 +6,6 @@
 
 autopublish
 insecure
-twbs:bootstrap
 mrt:jquery-ui
 accounts-ui
 accounts-password
