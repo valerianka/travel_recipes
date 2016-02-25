@@ -37,12 +37,14 @@ Recipe=React.createClass({
     const recipeLink = `/recipes/${this.props.recipe._id}`;
     return (
       <a href={recipeLink}>
-        <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
-          <p className="name">{this.props.recipe.name} </p>
-          <p>{this.props.recipe.duration}</p>
-          <p>{this.props.recipe.location}</p>
-          <p className="username">Created by:</p>
-          <p>{this.props.recipe.userName} {this.props.recipe.dateCreatedFromNow}</p>
+        <div className="thumb-wrapper">
+          <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
+            <p className="name">{this.props.recipe.name} </p>
+            <p>{this.props.recipe.duration}</p>
+            <p>{this.props.recipe.location}</p>
+            <p className="username">Created by:</p>
+            <p>{this.props.recipe.userName} {this.props.recipe.dateCreatedFromNow}</p>
+          </div>
         </div>
       </a>
     );
