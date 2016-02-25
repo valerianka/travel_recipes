@@ -79,3 +79,15 @@ NewRecipeButton=React.createClass({
     }
   }
 });
+
+
+
+Banner=React.createClass({
+  render(){
+    return (
+      <div className="banner" style={ {backgroundImage: `url(${this.props.backgroundImage})`} }>
+        {this.props.bannerText}
+      </div>
+    );
+  }
+});
