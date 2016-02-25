@@ -22,7 +22,7 @@ $not-curly-font: 'Tenor Sans', sans-serif;
 /******************************
 	Sizes
 ******************************/
-$thumbnail-border-width: .15em;
+$thumbnail-border-width: 0.15rem;
 
 /******************************
 	General
@@ -154,7 +154,6 @@ header {
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-bottom: ($thumbnail-border-width / 3) solid white;
 }
 
 @media screen and (max-width: 700px){
@@ -170,8 +169,7 @@ header {
 ******************************/
 
 .recipe-list {
-	border-top: $thumbnail-border-width solid white;
-	border-bottom: $thumbnail-border-width solid white;
+	border-top: ($thumbnail-border-width * 2) solid white;
 }
 
 .thumb-wrapper {
