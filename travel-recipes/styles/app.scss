@@ -131,7 +131,14 @@ header {
 	font-size: 72px;
 	font-family: $very-curly-font;
 	text-align: center;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
+
+	-webkit-align-items: center;
 	align-items: center;
 
 	margin-top: 70px;
@@ -153,6 +160,10 @@ header {
 /******************************
 	Recipe list
 ******************************/
+
+.recipeList {
+
+}
 
 .thumb {
 	/* width for mobile */
