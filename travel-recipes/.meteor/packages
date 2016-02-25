@@ -31,3 +31,4 @@ kadira:flow-router
 kadira:react-layout
 react
 react-meteor-data
+reactive-var
