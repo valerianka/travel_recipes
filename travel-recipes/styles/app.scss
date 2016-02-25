@@ -23,6 +23,10 @@ $not-curly-font: 'Tenor Sans', sans-serif;
 	General
 ******************************/
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	margin: 0;
 }
