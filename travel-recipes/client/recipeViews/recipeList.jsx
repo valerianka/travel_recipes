@@ -15,31 +15,38 @@ MainPage=React.createClass({
   },
 
   render() {
-    return <div>
-      <div
-      className="banner"
-      style={{backgroundImage: "url('/traveling/womanphotographingstupa.jpg')"}}>
-      Discover the worlds most delicious vacations
-      </div> 
-      {this.renderRecipes()}
-    </div>;
+    return (
+      <div>
+        <div
+        className="banner"
+        style={{backgroundImage: "url('/traveling/womanphotographingstupa.jpg')"}}>
+        Discover the worlds most delicious vacations
+        </div>
+
+        {this.renderRecipes()}
+      </div>
+    );
   }
 });
+
+
 
 Recipe=React.createClass({
   render(){
     console.log(this.props.recipe);
     var string = `/recipes/${this.props.recipe._id}`;
-    return <div>
-  <a href={string}>
-    <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
-      <p className="name">{this.props.recipe.name} </p>
-      <p>{this.props.recipe.duration}</p>
-      <p>{this.props.recipe.location}</p>
-      <p className="username">Created by:</p>
-      <p>{this.props.recipe.userName} {this.props.recipe.dateCreatedFromNow}</p>
-    </div>
-  </a>
-</div>;
+    return (
+      <div>
+        <a href={string}>
+          <div className="thumb" style={{backgroundImage: `url(${this.props.recipe.mainImage})`}}>
+            <p className="name">{this.props.recipe.name} </p>
+            <p>{this.props.recipe.duration}</p>
+            <p>{this.props.recipe.location}</p>
+            <p className="username">Created by:</p>
+            <p>{this.props.recipe.userName} {this.props.recipe.dateCreatedFromNow}</p>
+          </div>
+        </a>
+      </div>
+    );
   }
 });

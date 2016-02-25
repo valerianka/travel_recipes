@@ -6,6 +6,8 @@ FlowRouter.route('/', {
   }
 });
 
+
+
 FlowRouter.route('/recipes/:_id', {
   action: function(params) {
     const recipe = Recipes.findOne(params._id);
@@ -14,6 +16,8 @@ FlowRouter.route('/recipes/:_id', {
     });
   }
 });
+
+
 
 DetailedView=React.createClass({
   render(){
