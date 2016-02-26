@@ -7,7 +7,6 @@
 autopublish
 insecure
 mrt:jquery-ui
-accounts-ui
 accounts-password
 momentjs:moment
 standard-minifiers
@@ -32,3 +31,4 @@ kadira:react-layout
 react
 react-meteor-data
 reactive-var
+accounts-ui-unstyled
