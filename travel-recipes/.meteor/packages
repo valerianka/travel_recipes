@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-autopublish
 insecure
 mrt:jquery-ui
 accounts-password
@@ -32,3 +31,4 @@ react
 react-meteor-data
 reactive-var
 accounts-ui-unstyled
+meteorhacks:fast-render
