@@ -4,7 +4,7 @@ Layout=React.createClass({
       <div className="layout">
         <header>
           <a href="/"><span className="site-name">Travel Recipes</span></a>
-          <Nagivation />
+          <Hamburger />
         </header>
 
         { this.props.content }
@@ -14,15 +14,14 @@ Layout=React.createClass({
 });
 
 
-Nagivation=React.createClass({
+Hamburger=React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData(){
     return {
-      windowWidth: rwindow.innerWidth()
+      loggedIn: Meteor.userId()
     };
   },
-
 
   getInitialState(){
     return {
@@ -30,25 +29,20 @@ Nagivation=React.createClass({
     };
   },
 
-
   toggleMenu(){
     this.setState({menuVisible: !this.state.menuVisible});
   },
 
-
   render(){
-    if (this.data.windowWidth <= 700){
+    if (!this.data.loggedIn){
       return (
-        <div>
-          <div id="hamburger" onClick={this.toggleMenu}></div>
-          <HamburgerMenu menuVisible={this.state.menuVisible}/>
-        </div>
+        <LoginButtons />
       );
     } else {
       return (
         <div>
-          <NewRecipeButton />
-          <LoginButtons />
+          <div id="hamburger" onClick={this.toggleMenu}></div>
+          <HamburgerMenu menuVisible={this.state.menuVisible}/>
         </div>
       );
     }
@@ -105,7 +99,7 @@ NewRecipeButton=React.createClass({
       return null;
     } else {
       return (
-        <a className="button headerButton" href="/recipes/add">
+        <a className="button hamburger-menu-button" href="/recipes/add">
            New recipe
         </a>
       );
