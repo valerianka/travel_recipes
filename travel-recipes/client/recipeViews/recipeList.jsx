@@ -8,10 +8,9 @@ MainPage=React.createClass({
   },
 
   renderRecipes(){
-    return this.data.recipes.map((recipe) => {
+    return this.data.recipes.map((recipe)=>{
       return <RecipeThumbnail key={recipe._id} recipe={recipe} />;
     })
-
   },
 
   render() {
@@ -45,11 +44,10 @@ RecipeThumbnail=React.createClass({
     const recipeLink = `/recipes/${this.props.recipe._id}`;
     const height = calculateHeight(this.data.windowWidth);
     const backgroundImage = `url(${this.props.recipe.mainImage})`;
+
     return (
       <a href={recipeLink}>
-        <div
-          className="thumb-wrapper"
-        >
+        <div className="thumb-wrapper">
           <div
             className="thumb"
             style={{height: height, backgroundImage: backgroundImage}}
