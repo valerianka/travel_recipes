@@ -48,18 +48,27 @@
 // </template>
 
 DetailedView=React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData(){
+    return {
+      recipe: Recipes.findOne({_id: this.props._id})
+    };
+  },
+
   render(){
-    console.log(this.props);
+    console.log("recipe = ", this.data.recipe);
+
     return null;
       // <div>.
-        // <Banner backgroundImage={this.props.recipe.mainImage} bannerText={this.props.recipe.name}/>
+        // <Banner backgroundImage={this.data.recipe.mainImage} bannerText={this.data.recipe.name}/>
         //  <div className="container">
         //    <div id="recipe-info">
-        //      <h3>Visit {this.props.recipe.location} for {this.props.recipe.duration}</h3>
-        //       <p>{this.props.recipe.summary}</p>
+        //      <h3>Visit {this.data.recipe.location} for {this.data.recipe.duration}</h3>
+        //       <p>{this.data.recipe.summary}</p>
         //     </div>
 
-        //     //<Ingredients ingredients={this.props.recipe.ingredients}/>
+        //     //<Ingredients ingredients={this.data.recipe.ingredients}/>
         //  </div>
       // </div>
     // );

@@ -10,9 +10,8 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/recipes/:_id', {
   action: function(params) {
-    const recipe = Recipes.findOne(params._id);
     ReactLayout.render(Layout, {
-      content: <DetailedView recipe={recipe} />
+      content: <DetailedView _id={params._id} />
     });
   }
 });
@@ -21,5 +20,3 @@ FlowRouter.route('/recipes/:_id', {
 // Router.route("/recipes/add", {
 //   name: "recipeForm"
 // });
-
-
