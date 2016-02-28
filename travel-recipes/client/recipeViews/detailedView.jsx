@@ -59,19 +59,30 @@ DetailedView=React.createClass({
   render(){
     console.log("recipe = ", this.data.recipe);
 
-    return null;
-      // <div>.
-        // <Banner backgroundImage={this.data.recipe.mainImage} bannerText={this.data.recipe.name}/>
-        //  <div className="container">
-        //    <div id="recipe-info">
-        //      <h3>Visit {this.data.recipe.location} for {this.data.recipe.duration}</h3>
-        //       <p>{this.data.recipe.summary}</p>
-        //     </div>
+    if (!this.data.recipe){
+      return (<div>
+        <Banner backgroundImage={'/traveling/womanlost.jpg'} bannerText={'Recipe not found'} />
 
-        //     //<Ingredients ingredients={this.data.recipe.ingredients}/>
-        //  </div>
-      // </div>
-    // );
+        <div className="container">
+          <p>I'm sorry but that recipe doesn't exist. Maybe it was deleted?</p>
+          <p>Head back to the <a href="/">homepage</a> to find a better one!</p>
+        </div>
+      </div>);
+    } else {
+      return null;
+        // <div>.
+          // <Banner backgroundImage={this.data.recipe.mainImage} bannerText={this.data.recipe.name}/>
+          //  <div className="container">
+          //    <div id="recipe-info">
+          //      <h3>Visit {this.data.recipe.location} for {this.data.recipe.duration}</h3>
+          //       <p>{this.data.recipe.summary}</p>
+          //     </div>
+
+          //     //<Ingredients ingredients={this.data.recipe.ingredients}/>
+          //  </div>
+        // </div>
+      // );
+    }
   }
 });
 
