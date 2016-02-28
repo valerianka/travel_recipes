@@ -7,7 +7,6 @@
 autopublish
 insecure
 mrt:jquery-ui
-accounts-password
 momentjs:moment
 standard-minifiers
 meteor-base
@@ -32,3 +31,6 @@ react
 react-meteor-data
 reactive-var
 accounts-ui-unstyled
+accounts-facebook
+accounts-google
+accounts-twitter
