@@ -34,33 +34,37 @@ Hamburger=React.createClass({
     this.setState({menuVisible: !this.state.menuVisible});
   },
 
+  goToNewRecipePage(){
+    this.toggleMenu();
+    FlowRouter.go('/recipe/add');
+  },
+
+  logout(){
+    this.toggleMenu();
+    Meteor.logout();
+  },
+
   render(){
     if (!this.data.loggedIn){
       return (
         <LoginButton />
       );
     } else {
+      const display = !this.state.menuVisible ? 'none' : 'inline';
+
       return (
         <div>
           <div id="hamburger" onClick={this.toggleMenu}></div>
-          <HamburgerMenu menuVisible={this.state.menuVisible}/>
-        </div>
-      );
-    }
-  }
-});
 
+          <div className="hamburger-menu" style={{display: display}}>
+            <div className="button" onClick={this.goToNewRecipePage}>
+              New recipe
+            </div>
 
-
-HamburgerMenu=React.createClass({
-  render(){
-    if (!this.props.menuVisible){
-      return null;
-    } else {
-      return (
-        <div className="hamburger-menu">
-          <NewRecipeButton/>
-          <LogoutButton />
+            <div className="button" onClick={this.logout}>
+               Logout
+            </div>
+          </div>
         </div>
       );
     }
@@ -81,32 +85,6 @@ LoginButton=React.createClass({
 
   render(){
     return (<span ref="container"/>);
-  }
-});
-
-
-
-LogoutButton=React.createClass({
-  logout(){
-    Meteor.logout();
-  },
-
-  render(){
-    return (
-      <div className="button" onClick={this.logout}>
-         Logout
-      </div>
-    );
-  }
-});
-
-
-
-NewRecipeButton=React.createClass({
-  render(){
-    return (
-      <a className="button" href="/recipes/add">New recipe</a>
-    );
   }
 });
 
