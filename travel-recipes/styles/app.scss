@@ -203,53 +203,9 @@ header {
 	background-color: $medium-blue;
 	padding: 8px 16px;
 	display: block;
-	margin: 10px auto;
+	margin: 20px auto;
 	border: none;
 	border-radius: 2px;
-	letter-spacing: 0.035em;
-	text-align: center;
-	cursor: pointer;
-	max-width: 300px;
-}
-
-.login-buttons-dropdown-align,
-.login-close-text,
-.login-button-form-submit,
-.additional-link {
-	cursor: pointer;
-}
-
-.login-button-form-submit {
-	color: white !important;
-	font-family: $slightly-curly-font;
-	font-size: 18px;
-	background-color: $medium-blue;
-	padding: 8px 16px;
-	display: block;
-	margin: 10px 0 50px 0;
-	border: none;
-	border-radius: 3px;
-	letter-spacing: 0.035em;
-	text-align: center;
-}
-
-.login-button-form-submit:hover,
-#login-buttons-open-change-password:hover,
-#login-buttons-logout:hover {
-	background-color: $light-blue;
-}
-
-#login-buttons-open-change-password,
-#login-buttons-logout {
-	color: white !important;
-	font-family: $slightly-curly-font;
-	font-size: 18px;
-	background-color: $medium-blue;
-	padding: 8px 16px;
-	display: block;
-	margin: 10px auto;
-	border: none;
-	border-radius: 3px;
 	letter-spacing: 0.035em;
 	text-align: center;
 	cursor: pointer;
