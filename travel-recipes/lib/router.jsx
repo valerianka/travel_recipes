@@ -17,6 +17,11 @@ FlowRouter.route('/recipes/:_id', {
 });
 
 
-// Router.route("/recipes/add", {
-//   name: "recipeForm"
-// });
+
+FlowRouter.route('/recipe/add', {
+  action: function(params) {
+    ReactLayout.render(Layout, {
+      content: <AddNewRecipe />
+    });
+  }
+});
