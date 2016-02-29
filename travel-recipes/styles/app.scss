@@ -44,6 +44,14 @@ $thumbnail-border-width: 0.1rem;
 	align-items: $align-items;
 }
 
+@mixin vertical-linear-gradient($color1, $color2, $color3){
+	background: $color1;
+	background: -webkit-linear-gradient(left, $color1, $color2, $color3);
+	background: -o-linear-gradient(bottom, $color1, $color2, $color3);
+	background: -moz-linear-gradient(bottom, $color1, $color2, $color3);
+	background: linear-gradient(to bottom, $color1, $color2, $color3);
+}
+
 @mixin menu-overlay(){
 	position: fixed;
 	top: 65px;
@@ -217,17 +225,47 @@ header {
 ******************************/
 
 .banner {
-	color: white;
-	font-size: 72px;
-	font-family: $very-curly-font;
-	text-align: center;
-	@include flexbox(center, center);
+	position: relative;
 	margin-top: 70px;
-	padding: 20px;
 	height: 300px;
 	width: 100%;
+}
+
+.banner-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	text-align: center;
+	@include flexbox(center, flex-start);
+	padding: 0.5em;
+	color: white;
+	font-size: 64px;
+	font-family: $very-curly-font;
+}
+
+.banner-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	margin: 0;
+	@include vertical-linear-gradient(rgba(0,5,44,0.85), rgba(0,5,44,0.35), rgba(0,5,44,0))
+}
+
+.banner-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 	background-size: cover;
 	background-repeat: no-repeat;
+	top: 0;
+	left: 0;
 }
 
 @media screen and (max-width: 700px){
@@ -288,11 +326,7 @@ header {
 	width: 100%;
 	z-index: 0;
 	margin: 0;
-	background: rgba(0, 0, 0, 0.5);
-	background: -webkit-linear-gradient(left, rgba(0,5,44,0.85), rgba(0,5,44,0.25), rgba(0,5,44,0));
-	background: -o-linear-gradient(bottom, rgba(0,5,44,0.85), rgba(0,5,44,0.25), rgba(0,5,44,0));
-	background: -moz-linear-gradient(bottom, rgba(0,5,44,0.85), rgba(0,5,44,0.25), rgba(0,5,44,0));
-	background: linear-gradient(to bottom, rgba(0,5,44,0.85), rgba(0,5,44,0.25), rgba(0,5,44,0));
+	@include vertical-linear-gradient(rgba(0,5,44,0.85), rgba(0,5,44,0.35), rgba(0,5,44,0))
 }
 
 .thumb-image {
