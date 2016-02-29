@@ -43,26 +43,24 @@ RecipeThumbnail=React.createClass({
   render(){
     const recipeLink = `/recipes/${this.props.recipe._id}`;
     const height = calculateHeight(this.data.windowWidth);
-    const backgroundImage = `url(${this.props.recipe.mainImage})`;
+    let backgroundImage = `url('/tripicon.png')`;
+    if (this.props.recipe.mainImage) backgroundImage = `url(${this.props.recipe.mainImage})`;
+    const dateCreatedFromNow = moment(this.props.recipe.dateCreated).fromNow();
 
     return (
       <a href={recipeLink}>
         <div className="thumb-wrapper" style={{height: height}}>
           <div className="thumb-text">
-            <p className="name">{this.props.recipe.name} </p>
-            <p>{this.props.recipe.duration}</p>
-            <p>{this.props.recipe.location}</p>
-            <p className="username">Created by:</p>
-            <p>{this.props.recipe.userName} {this.props.recipe.dateCreatedFromNow}</p>
+            <p className="name">{this.props.recipe.name}</p>
+            <p>{this.props.recipe.duration} days long</p>
+            <p>in {this.props.recipe.location}</p>
+            <p>created by {this.props.recipe.userName}</p>
+            <p>{dateCreatedFromNow}</p>
           </div>
 
           <div className="thumb-overlay"></div>
 
-          <div
-            className="thumb-image"
-            style={{backgroundImage: backgroundImage}}
-          >
-          </div>
+          <div className="thumb-image" style={{backgroundImage: backgroundImage}}></div>
         </div>
       </a>
     );
