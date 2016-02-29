@@ -6,6 +6,13 @@ Layout=React.createClass({
       <div className="layout">
         <header>
           <a href="/"><span className="site-name">Travel Recipes</span></a>
+
+          <div className="search-bar">
+            <i className="material-icons search-icon">search</i>
+            <i className="material-icons search-button">search</i>
+            <input id="search-bar-input" placeholder="search"/>
+          </div>
+
           <Hamburger />
         </header>
 

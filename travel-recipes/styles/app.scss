@@ -132,53 +132,75 @@ header {
 	padding: 0 20px;
 	@include flexbox(space-between, center);
 	z-index: 2;
-}
 
-.site-name {
-	font-family: $slightly-curly-font;
-	font-weight: 400;
-	font-size: 32px;
-	background: -webkit-linear-gradient($dark-blue, $light-blue);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-#hamburger {
-	width: 32px;
-	height: 24px;
-	cursor: pointer;
-	background-image: url('/hamburger_blue.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
-}
-
-#hamburger:hover {
-	background-image: url('hamburger_lightblue.png');
-}
-
-.headerButton {
-	font-size: 14px;
-	padding: 6px 12px;
-	font-family: $not-curly-font;
-}
-
-.headerButton:hover {
-	color: white;
-}
-
-.hamburger-menu {
-	@include menu-overlay(center);
-	flex-direction: column;
-
-	.button {
-		max-width: 300px;
-		margin-bottom: 20px;
+	.site-name {
+		font-family: $slightly-curly-font;
+		font-weight: 400;
+		font-size: 32px;
+		background: -webkit-linear-gradient($dark-blue, $light-blue);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
-}
 
-#login-buttons a {
-	font-size: 20px;
-	cursor: pointer;
+	.search-bar {
+		@include flexbox(center, center);
+
+		#search-bar-input {
+			margin: 0 0 0 5px !important;
+			width: 300px;
+		}
+
+		@media screen and (max-width: 700px){
+			#search-bar-input,
+			.search-icon {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: 700px){
+			.search-button {
+				display: none;
+			}
+		}
+	}
+
+	#hamburger {
+		width: 32px;
+		height: 24px;
+		cursor: pointer;
+		background-image: url('/hamburger_blue.png');
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	#hamburger:hover {
+		background-image: url('hamburger_lightblue.png');
+	}
+
+	.headerButton {
+		font-size: 14px;
+		padding: 6px 12px;
+		font-family: $not-curly-font;
+	}
+
+	.headerButton:hover {
+		color: white;
+	}
+
+	.hamburger-menu {
+		@include menu-overlay(center);
+		flex-direction: column;
+
+		.button {
+			max-width: 300px;
+			margin-bottom: 20px;
+		}
+	}
+
+	#login-buttons a {
+		font-size: 20px;
+		cursor: pointer;
+	}
 }
 
 
