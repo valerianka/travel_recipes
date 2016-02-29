@@ -3,7 +3,7 @@ MainPage=React.createClass({
 
   getMeteorData() {
     return {
-      recipes: Recipes.find({}).fetch()
+      recipes: Recipes.find({}, {sort: {dateCreated: -1}}).fetch()
     }
   },
 
