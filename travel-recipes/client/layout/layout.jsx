@@ -1,5 +1,7 @@
 Layout=React.createClass({
   render() {
+    window.scrollTo(0, 0);
+
     return (
       <div className="layout">
         <header>
