@@ -10,28 +10,13 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/recipes/:_id', {
   action: function(params) {
-    const recipe = Recipes.findOne(params._id);
     ReactLayout.render(Layout, {
-      content: <DetailedView recipe={recipe} />
+      content: <DetailedView _id={params._id} />
     });
   }
 });
 
 
-
-DetailedView=React.createClass({
-  render(){
-    return <span>Recipe</span>;
-  }
-});
 // Router.route("/recipes/add", {
 //   name: "recipeForm"
-// });
-
-// Router.route("/recipes/:_id", {
-//   name: "recipe",
-//   data() {
-//     var recipe = Recipes.findOne(this.params._id);
-//     return recipe;
-//   }
 // });

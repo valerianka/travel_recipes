@@ -44,6 +44,14 @@ $thumbnail-border-width: 0.1rem;
 	align-items: $align-items;
 }
 
+@mixin vertical-linear-gradient($color1, $color2, $color3){
+	background: $color1;
+	background: -webkit-linear-gradient(left, $color1, $color2, $color3);
+	background: -o-linear-gradient(bottom, $color1, $color2, $color3);
+	background: -moz-linear-gradient(bottom, $color1, $color2, $color3);
+	background: linear-gradient(to bottom, $color1, $color2, $color3);
+}
+
 @mixin menu-overlay($justify-content){
 	position: fixed;
 	top: 65px;
@@ -123,6 +131,7 @@ header {
 	height: 65px;
 	padding: 0 20px;
 	@include flexbox(space-between, center);
+	z-index: 2;
 }
 
 .site-name {
@@ -264,23 +273,56 @@ header {
 ******************************/
 
 .banner {
-	color: white;
-	font-size: 72px;
-	font-family: $very-curly-font;
-	text-align: center;
-	@include flexbox(center, center);
+	position: relative;
 	margin-top: 70px;
-	padding: 20px;
 	height: 300px;
 	width: 100%;
+}
+
+.banner-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	text-align: center;
+	@include flexbox(center, flex-start);
+	padding: 0.5em;
+	color: white;
+	font-size: 64px;
+	font-family: $very-curly-font;
+}
+
+.banner-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	margin: 0;
+	@include vertical-linear-gradient(rgba(0,5,44,0.85), rgba(0,5,44,0.35), rgba(0,5,44,0))
+}
+
+.banner-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 	background-size: cover;
 	background-repeat: no-repeat;
+	top: 0;
+	left: 0;
 }
 
 @media screen and (max-width: 700px){
 	.banner {
-		font-size: 44px;
 		height: 200px;
+	}
+
+	.banner-text {
+		font-size: 44px;
 	}
 }
 
@@ -290,18 +332,17 @@ header {
 ******************************/
 
 .recipe-list {
-	@include vertical-borders()
+	border-top: ($thumbnail-border-width * 2) solid white;
+	border-bottom: ($thumbnail-border-width * 2) solid white;
 }
 
 .thumb-wrapper {
 	margin: 0;
 	display: inline-block;
-	// position: relative;
+	position: relative;
 
 	/* size for mobile */
 	width: 100%;
-
-	@include vertical-borders()
 
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -309,26 +350,44 @@ header {
 	transition: all .2s ease;
 }
 
-.thumb {
+.thumb-text {
+	position: absolute;
 	padding: 15px;
 	padding-bottom: 5px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	opacity: 1;
-
+	z-index: 1;
 	height: 100%;
 	width: 100%;
+	margin: 0;
+	color: white;
 }
 
-.thumb p {
-	color: white;
+.thumb-text p {
 	margin: 0;
 }
 
-.thumb p.name {
+.thumb-text p.name {
 	font-family: $slightly-curly-font;
 	font-weight: 400;
 	font-size: 20px;
+}
+
+.thumb-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	margin: 0;
+	@include vertical-linear-gradient(rgba(0,5,44,0.85), rgba(0,5,44,0.35), rgba(0,5,44,0))
+}
+
+.thumb-image {
+	position: absolute;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	margin: 0;
 }
 
 @media screen and (min-width: 501px) {

@@ -10,7 +10,8 @@ Template.recipeForm.events({
 			mainImage: $("input[name='mainImage']").val(),
 			summary: $("textarea[name='summary']").val(),
 			dateCreated: new Date(),
-			userName: Meteor.user().username
+			userName: Meteor.user().username,
+			ingredients: []
 		});
 
 		Router.go("/recipes/" + recipeId);
