@@ -14,6 +14,7 @@ Layout=React.createClass({
 });
 
 
+
 Hamburger=React.createClass({
   mixins: [ReactMeteorData],
 
@@ -36,7 +37,7 @@ Hamburger=React.createClass({
   render(){
     if (!this.data.loggedIn){
       return (
-        <LoginButtons />
+        <LoginButton />
       );
     } else {
       return (
@@ -58,8 +59,8 @@ HamburgerMenu=React.createClass({
     } else {
       return (
         <div className="hamburger-menu">
-          <NewRecipeButton />
-          <LoginButtons />
+          <NewRecipeButton/>
+          <LogoutButton />
         </div>
       );
     }
@@ -68,7 +69,7 @@ HamburgerMenu=React.createClass({
 
 
 
-LoginButtons=React.createClass({
+LoginButton=React.createClass({
   componentDidMount(){
     this.view = Blaze.render(Template.loginButtons,
       ReactDOM.findDOMNode(this.refs.container));
@@ -79,31 +80,33 @@ LoginButtons=React.createClass({
   },
 
   render(){
-    return (<span ref="container" />);
+    return (<span ref="container"/>);
+  }
+});
+
+
+
+LogoutButton=React.createClass({
+  logout(){
+    Meteor.logout();
+  },
+
+  render(){
+    return (
+      <div className="button" onClick={this.logout}>
+         Logout
+      </div>
+    );
   }
 });
 
 
 
 NewRecipeButton=React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData(){
-    return {
-      loggedIn: Meteor.userId()
-    }
-  },
-
   render(){
-    if (!this.data.loggedIn) {
-      return null;
-    } else {
-      return (
-        <a className="button hamburger-menu-button" href="/recipes/add">
-           New recipe
-        </a>
-      );
-    }
+    return (
+      <a className="button" href="/recipes/add">New recipe</a>
+    );
   }
 });
 
