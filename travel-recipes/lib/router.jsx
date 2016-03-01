@@ -1,7 +1,7 @@
 FlowRouter.route('/', {
   action: function() {
     ReactLayout.render(Layout, {
-      content: <MainPage />
+      content: MainPage
     });
   }
 });
@@ -11,7 +11,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/recipes/:_id', {
   action: function(params) {
     ReactLayout.render(Layout, {
-      content: <DetailedView _id={params._id} />
+      content: DetailedView
     });
   }
 });
@@ -21,7 +21,7 @@ FlowRouter.route('/recipes/:_id', {
 FlowRouter.route('/recipe/add', {
   action: function(params) {
     ReactLayout.render(Layout, {
-      content: <AddNewRecipe />
+      content: AddNewRecipe
     });
   }
 });

@@ -52,7 +52,7 @@ DetailedView=React.createClass({
 
   getMeteorData(){
     return {
-      recipe: Recipes.findOne({_id: this.props._id})
+      recipe: Recipes.findOne({_id: FlowRouter.getParam("_id")})
     };
   },
 

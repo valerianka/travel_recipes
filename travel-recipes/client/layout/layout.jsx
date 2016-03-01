@@ -34,6 +34,10 @@ Layout=React.createClass({
   render() {
     window.scrollTo(0, 0);
 
+    const content = React.createElement(this.props.content, {
+      searchValue: this.state.searchValue
+    });
+
     return (
       <div className="layout">
         <header>
@@ -55,7 +59,7 @@ Layout=React.createClass({
 
         {this.renderSearchDropdown()}
 
-        {this.props.content}
+        {content}
       </div>
     );
   }
