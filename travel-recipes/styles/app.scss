@@ -209,13 +209,23 @@ header {
 
 .dropdown-search-bar {
 	position: fixed;
-	top: 70;
 	background-color: white;
 	width: 100%;
 	height: 60px;
-	padding: 0 20px;
-	@include flexbox(center, flex-end);
+	padding: 10px 20px 0 20px;
 	z-index: 2;
+}
+
+@media screen and (min-width: 700px){
+	.dropdown-search-bar {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 700px){
+	.dropdown-search-bar {
+		display: block;
+	}
 }
 
 

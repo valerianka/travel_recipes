@@ -1,12 +1,17 @@
 Layout=React.createClass({
   getInitialState(){
     return {
-      searchDropdownVisible: false
+      searchDropdownVisible: false,
+      searchValue: ''
     };
   },
 
   toggleSearchDropdown(){
     this.setState({searchDropdownVisible: !this.state.searchDropdownVisible});
+  },
+
+  searchChanged(event){
+    this.setState({searchValue: event.target.value});
   },
 
   renderSearchDropdown(){
@@ -15,7 +20,12 @@ Layout=React.createClass({
     } else {
       return (
         <div className="search-bar dropdown-search-bar">
-          <input id="search-bar-input" placeholder="search"/>
+          <input
+            id="search-bar-input"
+            placeholder="search"
+            value={this.state.searchValue}
+            onChange={this.searchChanged}
+          />
         </div>
       );
     }
@@ -32,7 +42,12 @@ Layout=React.createClass({
           <div className="search-bar">
             <i className="material-icons search-icon">search</i>
             <i className="material-icons search-button" onClick={this.toggleSearchDropdown}>search</i>
-            <input id="search-bar-input" placeholder="search"/>
+            <input
+              id="search-bar-input"
+              placeholder="search"
+              value={this.state.searchValue}
+              onChange={this.searchChanged}
+            />
           </div>
 
           <Hamburger />
