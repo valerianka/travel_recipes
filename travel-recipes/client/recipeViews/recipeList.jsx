@@ -2,15 +2,19 @@ MainPage=React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
+    const text = this.props.searchValue;
+    let query = {};
+    if (text) query = {$or: [{name: text}, {summary: text}, {location: text}]};
+
     return {
-      recipes: Recipes.find({}, {sort: {dateCreated: -1}}).fetch()
-    }
+      recipes: Recipes.find(query, {sort: {dateCreated: -1}}).fetch()
+    };
   },
 
   renderRecipes(){
     return this.data.recipes.map((recipe)=>{
-      return <RecipeThumbnail key={recipe._id} recipe={recipe} />;
-    })
+      return (<RecipeThumbnail key={recipe._id} recipe={recipe} />);
+    });
   },
 
   render() {
