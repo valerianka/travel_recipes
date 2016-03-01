@@ -1,4 +1,26 @@
 Layout=React.createClass({
+  getInitialState(){
+    return {
+      searchDropdownVisible: false
+    };
+  },
+
+  toggleSearchDropdown(){
+    this.setState({searchDropdownVisible: !this.state.searchDropdownVisible});
+  },
+
+  renderSearchDropdown(){
+    if (!this.state.searchDropdownVisible){
+      return null;
+    } else {
+      return (
+        <div className="search-bar dropdown-search-bar">
+          <input id="search-bar-input" placeholder="search"/>
+        </div>
+      );
+    }
+  },
+
   render() {
     window.scrollTo(0, 0);
 
@@ -9,14 +31,16 @@ Layout=React.createClass({
 
           <div className="search-bar">
             <i className="material-icons search-icon">search</i>
-            <i className="material-icons search-button">search</i>
+            <i className="material-icons search-button" onClick={this.toggleSearchDropdown}>search</i>
             <input id="search-bar-input" placeholder="search"/>
           </div>
 
           <Hamburger />
         </header>
 
-        { this.props.content }
+        {this.renderSearchDropdown()}
+
+        {this.props.content}
       </div>
     );
   }
