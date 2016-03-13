@@ -24,7 +24,7 @@ if (Meteor.isServer) {
 				name: "Backpacking",
 				location: "Yosemite",
 				duration: 6,
-				mainImage: "http://www.yosemitepark.com/Images/home-img-01.jpg",
+				mainImage: "http://travel.nationalgeographic.com/u/TvyamNb-BivtNwpvn7Sct0VFDulyAfA9wBcU0gVHVnqC5ghsgrXDA9wT3zkYEWzhEXuT-mTEtIc4rt2nCw/",
 				summary: "Yoemite high-country trip",
 				dateCreated: new Date(),
 				userName: "diedra"
