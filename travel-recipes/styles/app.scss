@@ -63,6 +63,11 @@ $thumbnail-border-width: 0.1rem;
 	width: 100%;
 	height: 100%;
 	text-align: center;
+
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-o-transition: height 0.5s ease-in-out;
+	transition: height 0.5s ease-in-out;
 }
 
 @mixin horizontal-borders(){
