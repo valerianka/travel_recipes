@@ -74,7 +74,7 @@ DetailedView=React.createClass({
           <Banner backgroundImage={this.data.recipe.mainImage} bannerText={this.data.recipe.name}/>
           <div className="container">
             <div id="recipe-info">
-              <h3>Visit {this.data.recipe.location} for {this.data.recipe.duration}</h3>
+              <h3>Visit {this.data.recipe.location} for {this.data.recipe.duration} days</h3>
               <p>{this.data.recipe.summary}</p>
             </div>
 
