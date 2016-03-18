@@ -150,8 +150,6 @@ Banner=React.createClass({
           {this.props.bannerText}
         </div>
 
-        <div className="banner-overlay"></div>
-
         <div
           className="banner-image"
           style={{backgroundImage: `url(${this.props.backgroundImage})`}}
