@@ -96,7 +96,7 @@ IngredientsList=React.createClass({
   },
 
   render(){
-    if (!this.props.ingredients.length) {
+    if (!(this.props.ingredients && this.props.ingredients.length)) {
       return null;
     } else {
       return (
