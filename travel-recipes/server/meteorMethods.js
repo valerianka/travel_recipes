@@ -6,5 +6,8 @@ Meteor.methods({
       {multi: true}
     );
   },
-  deleteRecipe: (id) => Recipes.remove(id)
+  deleteRecipe: (id) => Recipes.remove(id),
+  deleteRecipes: () => {
+    Recipes.remove({});
+  }
 });
