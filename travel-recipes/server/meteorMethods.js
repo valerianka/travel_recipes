@@ -8,5 +8,8 @@ Meteor.methods({
   },
 
   deleteRecipe(id){ Recipes.remove(id); },
-  deleteRecipes(){ Recipes.remove({}); }
+  deleteRecipes(){ Recipes.remove({}); },
+
+  deleteIngredient(id){ Ingredients.remove(id); },
+  deleteIngredients(){ Ingredients.remove({}); }
 });
