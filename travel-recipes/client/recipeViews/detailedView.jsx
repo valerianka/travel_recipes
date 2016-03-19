@@ -123,7 +123,7 @@ Ingredient=React.createClass({
   },
   render(){
     if (this.data.ingredient) {
-      const startTime=moment(this.data.ingredient.startTime).format("dddd, MMM Do YYYY, h:mm:ss a");
+      const startTime=moment(this.data.ingredient.startTime).format("dddd, MMM Do YYYY, h:mm a");
       return <div className='details'>
         <div id="drop-down-button">{this.data.ingredient.name}: {this.data.ingredient.type}</div>
         <ul className="additional-details">
