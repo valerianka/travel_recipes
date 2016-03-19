@@ -139,7 +139,6 @@ Ingredient=React.createClass({
         </div>
       );
     } else {
-      console.log('returning null');
       return null;
     }
   }
