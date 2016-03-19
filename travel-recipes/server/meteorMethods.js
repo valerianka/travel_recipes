@@ -24,7 +24,7 @@ Meteor.methods({
       location: "Yosemite",
       duration: 6,
       mainImage: "http://travel.nationalgeographic.com/u/TvyamNb-BivtNwpvn7Sct0VFDulyAfA9wBcU0gVHVnqC5ghsgrXDA9wT3zkYEWzhEXuT-mTEtIc4rt2nCw/",
-      summary: "Yoemite high-country trip",
+      summary: "Yosemite high-country trip",
       dateCreated: new Date(),
       userName: "diedra"
     });
