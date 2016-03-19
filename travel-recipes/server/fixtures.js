@@ -3,6 +3,7 @@ if (Meteor.isServer) {
 		if (Ingredients.find().count() === 0) {
 			Ingredients.insert({
 				_id: '1',
+				ingredientPic: "http://exp.cdn-hotels.com/hotels/1000000/30000/20100/20073/20073_421_z.jpg",
 				name: "Grand Hotel",
 				type: "lodging",
 				duration: "3 days",
@@ -12,6 +13,7 @@ if (Meteor.isServer) {
 			});
 			Ingredients.insert({
 				_id: '2',
+				ingredientPic: "http://goweloveit.s3.amazonaws.com/wp-content/uploads/2014/08/Red-Wine-on-Summer-Day.jpg",
 				name: "wine",
 				type: "activity",
 				duration: "4 hours",
@@ -21,6 +23,7 @@ if (Meteor.isServer) {
 			});
 			Ingredients.insert({
 				_id: '3',
+				ingredientPic: "http://i.telegraph.co.uk/multimedia/archive/02694/taxi-paris_2694943b.jpg",
 				name: "taxi",
 				type: "transportation",
 				duration: "1 hour",
