@@ -124,18 +124,20 @@ Ingredient=React.createClass({
   render(){
     if (this.data.ingredient) {
       const startTime=moment(this.data.ingredient.startTime).format("dddd, MMM Do YYYY, h:mm a");
-      return <div className='details'>
-        <div id="drop-down-button">{this.data.ingredient.name}: {this.data.ingredient.type}</div>
-        <ul className="additional-details">
-          <li className="ingredientPic"><img src="{this.data.ingredient.ingredientPic}"/></li>
-          <li>Start time: {startTime}</li>
-           <li>Duration: {this.data.ingredient.duration}</li>
-           <li>Cost: {this.data.ingredient.cost}</li>
-           <li>Address: {this.data.ingredient.address}</li>
-           <li>Website: {this.data.ingredient.website}</li>
-           <li>Notes: {this.data.ingredient.notes}</li>
-         </ul>
-       </div>;
+      return (
+        <div className='details'>
+          <div id="drop-down-button">{this.data.ingredient.name}: {this.data.ingredient.type}</div>
+          <ul className="additional-details">
+            <li className="ingredientPic"><img src={`${this.data.ingredient.ingredientPic}`} /></li>
+            <li>Start time: {startTime}</li>
+              <li>Duration: {this.data.ingredient.duration}</li>
+              <li>Cost: {this.data.ingredient.cost}</li>
+              <li>Address: {this.data.ingredient.address}</li>
+              <li>Website: {this.data.ingredient.website}</li>
+              <li>Notes: {this.data.ingredient.notes}</li>
+          </ul>
+        </div>
+      );
     } else {
       console.log('returning null');
       return null;
