@@ -1,6 +1,35 @@
 if (Meteor.isServer) {
 	Meteor.startup(function () {
-		// Recipes.remove({});
+		if (Ingredients.find().count() === 0) {
+			Ingredients.insert({
+				_id: '1',
+				name: "Grand Hotel",
+				type: "lodging",
+				duration: "3 days",
+				cost: 85,
+				address: "123 Main St., Paris, France",
+				website: "www.grandhotel.com"
+			});
+			Ingredients.insert({
+				_id: '2',
+				name: "wine",
+				type: "activity",
+				duration: "4 hours",
+				cost: 95,
+				address: "223 Main St., Paris, France",
+				website: "www.champagne.com"
+			});
+			Ingredients.insert({
+				_id: '3',
+				name: "taxi",
+				type: "transportation",
+				duration: "1 hour",
+				cost: 25,
+				address: "523 Main St., Paris, France",
+				website: "www.yellowtaxi.com"
+			});
+		}
+
 		if (Recipes.find().count() === 0) {
 			Recipes.insert({
 				name: "French Wine Tour",
@@ -9,7 +38,8 @@ if (Meteor.isServer) {
 				mainImage: "http://1af60cd74e95fe387bc8-1bfee98aeb105b45275a9419b6310abb.r63.cf1.rackcdn.com/164/2/large.jpg",
 				summary: "This will be so cool!",
 				dateCreated: new Date(),
-				userName: "diedra"
+				userName: "diedra",
+				ingredients: [1,2,3]
 			});
 			Recipes.insert({
 				name: "Our Trip",
@@ -30,32 +60,5 @@ if (Meteor.isServer) {
 				userName: "diedra"
 			});
 		}
-		// Ingredients.remove({});
-		/*if (Ingredients.find().count() === 0) {
-			Ingredients.insert({
-				name: "Grand Hotel",
-				type: "lodging",
-				duration: "3 days",
-				cost: 85,
-				address: "123 Main St., Paris, France",
-				website: "www.grandhotel.com"
-			});
-			Ingredients.insert({
-				name: "wine",
-				type: "activity",
-				duration: "4 hours",
-				cost: 95,
-				address: "223 Main St., Paris, France",
-				website: "www.champagne.com"
-			});
-			Ingredients.insert({
-				name: "taxi",
-				type: "transportation",
-				duration: "1 hour",
-				cost: 25,
-				address: "523 Main St., Paris, France",
-				website: "www.yellowtaxi.com"
-			});
-		}*/
 	});
 }
