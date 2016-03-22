@@ -4,7 +4,7 @@
 
 $light-blue: #44C1FF;
 $medium-blue: #00A3F4;
-$dark-blue: #007FBE;
+$dark-blue: #0078B4;
 $very-dark-blue: #000E60;
 
 $light-grey: #737386;
@@ -346,12 +346,13 @@ header {
 
 .thumb-text p {
 	margin: 0;
+	font-size: 14px;
 }
 
 .thumb-text p.name {
 	font-family: $slightly-curly-font;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 22px;
 }
 
 @media screen and (min-width: 501px) {
